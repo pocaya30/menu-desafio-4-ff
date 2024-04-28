@@ -40,8 +40,85 @@ a {
     transition: 0.7s ease;
 }
 
-.nav-link:hover{
-    color: dodgerblue;
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.select {
+    background-color: #2a2f3b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #2a2f3b;
+    border-radius: 0.5rem;
+    padding: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.select:hover {
+    background: #323741;
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    margin-left: 5px;
+}
+
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.menu {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: #262626;
+    border: 1px #363a43 solid;
+    box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
+    border-radius: 5px;
+    color: #9fa5b5;
+    position: absolute;
+    top: 9.4em;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.menu li{
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background: #2a2d35;
+}
+
+.active {
+    background: #23242a;
+}
+
+.menu-open {
+    display: block;
+    opacity: 1;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .bar {
@@ -88,6 +165,17 @@ a {
 
 .nav-menu.active {
     left: 0;
+}
+
+.active{
+    color: white;
+    text-decoration: none;
+}
+
+@media(max-width:680px){
+    .menu {
+        top: 9.3em;
+    }
 }
 
 
